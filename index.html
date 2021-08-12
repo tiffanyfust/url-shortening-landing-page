@@ -43,12 +43,32 @@
   </header>
   <main>
     <div class="wrapper">
-      <section class="formSection">
-        <form class="form">
-          <label for="linkInput" class="sr-only">Insert Link here:</label>
-          <input type="text" name="linkInput" id="linkInput" placeholder="Shorten a link here..." required>
-          <button type="submit" class="button">Shorten It!</button>
-        </form>
+      <section>
+        <div class="formSection">
+          <form class="form">
+            <label for="linkInput" class="sr-only">Insert Link here:</label>
+            <input type="text" name="linkInput" id="linkInput" placeholder="Shorten a link here..." required>
+            <button type="submit" class="button">Shorten It!</button>
+          </form>
+        </div>
+        <div class="linksContainer">
+          <ul class="links">
+            <li class="link">
+              <div>
+                <p class="originalLink">https://www.google.com/</p>
+                <p class="shortLink">https://shrtco.de/MqvVSG</p>
+              </div>
+              <button class="copyButton">Copy</button>
+            </li>
+            <li class="link">
+              <div>
+                <p class="originalLink">https://www.google.com/</p>
+                <p class="shortLink">https://shrtco.de/MqvVSG</p>
+              </div>
+              <button class="copyButton">Copy</button>
+            </li>
+          </ul>
+        </div>
       </section>
       <section class="statistics">
         <div class="mainContentText">
@@ -103,19 +123,19 @@
           </section>
           <section class="footerNav">
             <ul>
-              <li>Features</li>
+              <li><h4>Features</h4></li>
               <li><a href="">Link Shortening</a></li>
               <li><a href="">Branded Links</a></li>
               <li><a href="">Analytics</a></li>
             </ul>
             <ul>
-              <li>Resources</li>
+              <li><h4>Resources</h4></li>
               <li><a href="">Blog</a></li>
               <li><a href="">Developers</a></li>
               <li><a href="">Support</a></li>
             </ul>
             <ul>
-              <li>Company</li>
+              <li><h4>Company</h4></li>
               <li><a href="">About</a></li>
               <li><a href="">Our Team</a></li>
               <li><a href="">Careers</a></li>
@@ -153,5 +173,7 @@
         </div> -->
       </div>
     </footer>
+
+    <script src="app.js"></script>
 </body>
 </html>
