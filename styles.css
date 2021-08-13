@@ -68,6 +68,7 @@ a {
 h1,
 h2,
 h3,
+h4,
 p,
 ul {
     margin: 0;
@@ -199,6 +200,7 @@ main {
 .form {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     width: 100%;
     height: 60px;
     margin: 0 50px;
@@ -208,16 +210,39 @@ input {
     flex: 1;
     border-radius: 10px;
     border: none;
+    height: inherit;
     margin-right: 30px;
     padding-left: 30px;
+}
+
+.shortenButton {
+    height: inherit;
 }
 
 
 /* Link Results Styling */
 
+.loader {
+    display: none;
+    border: 8px solid #FFF;
+    border-top: 8px solid hsl(180, 66%, 49%);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: 15px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
 .links {
     display: flex;
     flex-direction: column;
+    position: relative;
+    top: -85px;
     width: 100%;
 }
 
@@ -238,10 +263,26 @@ input {
 
 .originalLink {
     color: hsl(260, 8%, 14%);
+    display: flex;
+    align-items: center;
+    max-width: 950px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.shortLink::before {
+    content: '';
+    display: inline-block;
+    position: relative;
+    background: linear-gradient(-90deg, white 20%, transparent);
+    left: -70px;
+    width: 60px;
+    height: 30px;
 }
 
 .shortLink {
     color: hsl(180, 66%, 49%);
+    min-width: 250px;
 }
 
 .copyButton {
@@ -250,6 +291,8 @@ input {
     background-color: hsl(180, 66%, 49%);
     border-radius: 8px;
     padding: 10px 30px;
+    margin-left: 30px;
+    max-width: 200px;
     cursor: pointer;
 }
 
@@ -266,7 +309,7 @@ input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 100px;
+    padding: 50px 0 150px 0;
 }
 
 .mainContentText {
@@ -320,6 +363,8 @@ input {
 
 .boostSection h2 {
     color: #FFF;
+    font-size: 2rem;
+    margin-bottom: 25px;
 }
 
 
@@ -345,11 +390,15 @@ footer a:hover {
 }
 
 .footerLogo img {
-    filter: invert(100%) sepia(1%) saturate(0%) hue-rotate(154deg) brightness(103%) contrast(101%);
+    filter: invert(100%) sepia(1%) saturate(0%) hue-rotate(154deg) brightness(113%) contrast(101%);
 }
 
 .footerNav {
     display: flex;
+    position: relative;
+    align-items: flex-start;
+    justify-content: flex-start;
+    right: -200px;
     flex-wrap: wrap;
 }
 
@@ -360,9 +409,17 @@ footer a:hover {
 }
 
 .footerNav li {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.footerNav h4 {
+    margin-bottom: 15px;
 }
 
 .socialLinks li {
     margin-right: 25px;
+}
+
+.socialLinks img:hover {
+    filter: invert(18%) sepia(67%) saturate(877%) hue-rotate(128deg) brightness(94%) contrast(90%);
 }

@@ -6,9 +6,12 @@ app.getShortLinks = (link) => {
     url.search = new URLSearchParams({
         url: link
     })
+    const loader = document.querySelector('.loader')
+    loader.style.display = 'block';
 
     fetch(url)
     .then(res => {
+        loader.style.display = 'none';
         return res.json();
     })
     .then(data => {
@@ -21,8 +24,12 @@ app.getShortLinks = (link) => {
     })
 }
 
+app.copyButton = () => {
+
+}
+
 app.displayLinks = (link) => {
-    console.log(link)
+
     const links = document.querySelector('.links');
 
     const li = document.createElement('li');
@@ -43,6 +50,20 @@ app.displayLinks = (link) => {
     contentDiv.append(longLink, shortLink);
     li.append(contentDiv, copyButton);
     links.append(li);
+
+    const copyButtons = document.querySelectorAll('.copyButton');
+
+    copyButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            button.style.background = 'hsl(257, 27%, 26%)';
+            button.style.padding = '10px 20px';
+            button.innerText = 'Copied!';
+            
+            const data = button.previousElementSibling.children[1].textContent;
+            navigator.clipboard.writeText(data);
+        })
+    })
 }
 
 app.init = () => {
@@ -52,10 +73,25 @@ app.init = () => {
         e.preventDefault();
         const inputEl = document.querySelector('#linkInput');
         const inputValue = inputEl.value;
-        console.log(inputValue)
 
         app.getShortLinks(inputValue);
+        inputEl.value = '';
+
+        // const copyButtons = document.querySelectorAll('.copyButton');
+
+        // copyButtons.forEach(button => {
+        //     button.addEventListener('click', (e) => {
+        //         e.preventDefault();
+        //         button.style.background = 'hsl(257, 27%, 26%)';
+        //         button.style.padding = '10px 20px';
+        //         button.innerText = 'Copied!';
+                
+        //         const data = button.previousElementSibling.children[1].textContent;
+        //         navigator.clipboard.writeText(data);
+        //     })
+        // })
     })
+    
 }
 
 app.init();
