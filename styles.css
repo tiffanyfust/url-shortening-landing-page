@@ -42,8 +42,10 @@ html {
 }
 
 .wrapper {
-    max-width: 1440px;
+    max-width: 1500px;
     margin: 0 auto;
+    padding-right: 30px;
+    padding-left:  30px;
 }
 
 h1,
@@ -63,6 +65,7 @@ p {
 
 a {
     text-decoration: none;
+    transition: color 0.2s ease-out;
 }
 
 h1,
@@ -88,6 +91,7 @@ li {
     background-color: hsl(180, 66%, 49%);
     padding: 13px 30px;
     border-radius: 25px;
+    transition: background-color 0.2s ease-out;
 }
 
 .button,
@@ -130,7 +134,8 @@ nav {
     flex-direction: row;
 }
 
-.menu {
+.menu,
+.userLogin {
     align-items: center;
 }
 
@@ -213,6 +218,25 @@ input {
     height: inherit;
     margin-right: 30px;
     padding-left: 30px;
+}
+
+input.invalid {
+    border: none;
+    outline: hsl(0, 87%, 67%) 3px solid;
+}
+
+input.invalid::placeholder {
+    color: hsl(0, 87%, 67%);
+    opacity: 0.8;
+}
+
+.error {
+    display: none;
+    position: absolute;
+    bottom: 25px;
+    left: 50px;
+    color: hsl(0, 87%, 67%);
+    font-style: italic;
 }
 
 .shortenButton {
@@ -408,6 +432,10 @@ footer a:hover {
     margin-right: 100px;
 }
 
+.footerNav ul:last-child {
+    margin-right: 0;
+}
+
 .footerNav li {
     margin-bottom: 15px;
 }
@@ -420,6 +448,102 @@ footer a:hover {
     margin-right: 25px;
 }
 
+.socialLinks img {
+    transition: all 0.2s ease-out;
+}
+
 .socialLinks img:hover {
     filter: invert(18%) sepia(67%) saturate(877%) hue-rotate(128deg) brightness(94%) contrast(90%);
+}
+
+
+
+@media (max-width: 1650px) {
+    .headerImg {
+        width: 50%;
+    }
+}
+
+@media (max-width: 1450px) {
+    .headerImg {
+        width: 57%;
+    }
+
+    .footerNav {
+        right: -100px;
+    }
+}
+
+@media (max-width: 1250px) {
+    h1 {
+        font-size: 3.7rem;
+    }
+
+    .footerNav {
+        right: 0px;
+    }
+}
+
+@media (max-width: 1050px) {
+    h1 {
+        font-size: 3.1rem;
+    }
+
+    .headerImg {
+        width: 65%;
+    }
+
+    .modals {
+        flex-direction: column;
+    }
+
+    .modal {
+        margin-right: 0;
+    }
+
+    .modal1,
+    .modal2,
+    .modal3 {
+        margin-top: 80px;
+    }
+
+    .footerNav {
+        right: 0px;
+    }
+
+    .socialLinks ul {
+        flex-direction: column;
+    }
+
+    .socialLinks li {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .socialLinks li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 950px) {
+
+    .mainHeader {
+        flex-direction: column-reverse;
+        height: 100vh;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .headerImg {
+        width: 80%;
+        margin-top: 100px;
+        top: 0;
+        right: -100px;
+    }
+
+    .headerText {
+        width: 100%;
+    }
 }
