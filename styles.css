@@ -542,7 +542,7 @@ footer a:hover {
     }
 
     .headerImg {
-        width: 100%;
+        width: 95%;
         top: 0px;
         right: -180px;
     }
@@ -561,7 +561,103 @@ footer a:hover {
 }
 
 @media (max-width: 800px) {
+
+    .headerImg {
+        width: 100%;
+    }
+
+    .footerLogo {
+        margin: 0 40px 40px 0;
+    }
+
+    .socialLinks ul {
+        flex-direction: row;
+        margin-left: 0;
+    }
+
+    .socialLinks li {
+        margin: 0 15px 0 0;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .headerImg {
+        width: 120%;
+    }
+
+    .form {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        height: initial;
+        margin: 0 30px
+    }
+
+    .form input,
+    .shortenButton {
+        width: 100%;
+    }
+
+    .form input {
+        line-height: 50px;
+        margin: 0;
+    }
+
+    .shortenButton {
+        margin-top: 15px;
+    }
+
+    .footerLogo {
+        margin: 0 40px 40px 0;
+    }
+
+    .socialLinks ul {
+        flex-direction: row;
+        margin-left: 0;
+    }
+
+    .socialLinks li {
+        margin: 0 20px 0 0;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .modal {
+        text-align: center;
+    }
+
+    .image {
+        justify-self: center;
+    }
+
+    .mainContentText {
+        text-align: center;
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footerLogo {
+        margin: 0 0 40px 0;
+    }
+
     .footerNav {
         flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footerNav ul {
+        margin: 0 0 20px 0;
+    }
+
+    .socialLinks li:last-child {
+        margin: 0;
     }
 }
