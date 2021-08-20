@@ -527,9 +527,14 @@ footer a:hover {
 
 @media (max-width: 950px) {
 
+    .menu,
+    .userLogin {
+        display: none;
+    }
+
     .mainHeader {
-        flex-direction: column-reverse;
         height: 100vh;
+        flex-direction: column-reverse;
     }
 
     h1 {
@@ -537,13 +542,26 @@ footer a:hover {
     }
 
     .headerImg {
-        width: 80%;
-        margin-top: 100px;
-        top: 0;
-        right: -100px;
+        width: 100%;
+        top: 0px;
+        right: -180px;
     }
 
     .headerText {
         width: 100%;
+        margin-bottom: 150px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footerNav ul {
+        margin-right: 80px;
+    }
+}
+
+@media (max-width: 800px) {
+    .footerNav {
+        flex-direction: column;
     }
 }

@@ -17,20 +17,33 @@ app.getShortLinks = (link) => {
     .then(data => {
         if (data) {
             const shortLink = data.result;
-            app.displayLinks(shortLink);
+            // app.displayLinks(shortLink);
+            app.savedLinks(shortLink);
         } else {
             return;
         }
     })
 }
 
-app.copyButton = () => {
+app.savedLinks = (link) => {
+    let linksArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+    console.log(linksArray)
+    
+    const linkObj = {
+        original_link: link.original_link,
+        full_short_link: link.full_short_link
+    }
 
+    linksArray.push(linkObj)
+    localStorage.setItem('items', JSON.stringify(linksArray))
+    app.displayLinks(link);
 }
+
 
 app.displayLinks = (link) => {
 
     const links = document.querySelector('.links');
+
 
     const li = document.createElement('li');
     li.classList.add('link');
@@ -66,10 +79,20 @@ app.displayLinks = (link) => {
     })
 }
 
+
 app.init = () => {
     const formEl = document.querySelector('.form');
     const inputEl = document.querySelector('#linkInput');
     const errorMsg = document.querySelector('.error');
+
+    const datas = JSON.parse(localStorage.getItem('items'))
+    
+    if (datas) {
+        datas.forEach(item => {
+            app.displayLinks(item);
+        })
+    }
+    
 
     formEl.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -84,6 +107,7 @@ app.init = () => {
             inputEl.classList.add('invalid');
             errorMsg.style.display = 'block';
         }
+
     })
 
     inputEl.addEventListener('focus', () => {
