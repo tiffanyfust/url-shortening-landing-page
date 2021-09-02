@@ -84,6 +84,32 @@ app.init = () => {
     const formEl = document.querySelector('.form');
     const inputEl = document.querySelector('#linkInput');
     const errorMsg = document.querySelector('.error');
+    const menuContainer = document.querySelector('.menu')
+    const menuLogin = document.querySelector('.userLogin')
+    const menuBtn = document.querySelector('.menuBtn');
+    const menuLi = document.querySelectorAll('.menu li')
+    let menuOpen = false;
+
+    const toggleMenu = () => {
+        
+        function toggleClass() {
+            menuContainer.classList.toggle('toggleCls');
+            menuLogin.classList.toggle('toggleCls');
+        }
+    
+        toggleClass();
+        if(!menuOpen) {
+            menuBtn.classList.add('open');
+            menuOpen = true;
+        } else {
+            menuBtn.classList.remove('open');
+            menuOpen = false;
+            console.log(menuOpen)
+        }
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+    menuLi.forEach(item => item.addEventListener('click', toggleMenu))
 
     const datas = JSON.parse(localStorage.getItem('items'))
     
