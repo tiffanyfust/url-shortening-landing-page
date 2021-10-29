@@ -65,6 +65,17 @@ app.displayLinks = (link) => {
     links.append(li);
 
     const copyButtons = document.querySelectorAll('.copyButton');
+    const originalLink = document.querySelectorAll('.originalLink');
+    const linksContainer = document.querySelector('.links')
+    console.log(originalLink)
+
+
+    originalLink.forEach((link) => {
+        if (link.scrollWidth > link.clientWidth) {
+            console.log(link.scrollWidth)
+        }
+    })
+
 
     copyButtons.forEach(button => {
         button.addEventListener('click', (e) => {
@@ -104,7 +115,6 @@ app.init = () => {
         } else {
             menuBtn.classList.remove('open');
             menuOpen = false;
-            console.log(menuOpen)
         }
     }
 
@@ -141,5 +151,7 @@ app.init = () => {
         errorMsg.style.display = 'none';
     })
 }
+
+
 
 app.init();
