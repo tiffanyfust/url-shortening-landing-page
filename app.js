@@ -17,7 +17,6 @@ app.getShortLinks = (link) => {
     .then(data => {
         if (data) {
             const shortLink = data.result;
-            // app.displayLinks(shortLink);
             app.savedLinks(shortLink);
         } else {
             return;
@@ -27,7 +26,6 @@ app.getShortLinks = (link) => {
 
 app.savedLinks = (link) => {
     let linksArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
-    console.log(linksArray)
     
     const linkObj = {
         original_link: link.original_link,
@@ -65,17 +63,6 @@ app.displayLinks = (link) => {
     links.append(li);
 
     const copyButtons = document.querySelectorAll('.copyButton');
-    const originalLink = document.querySelectorAll('.originalLink');
-    const linksContainer = document.querySelector('.links')
-    console.log(originalLink)
-
-
-    originalLink.forEach((link) => {
-        if (link.scrollWidth > link.clientWidth) {
-            console.log(link.scrollWidth)
-        }
-    })
-
 
     copyButtons.forEach(button => {
         button.addEventListener('click', (e) => {
