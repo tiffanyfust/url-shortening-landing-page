@@ -37,7 +37,6 @@ Users should be able to:
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
 - Flexbox
 - Javascript
 - Shortly API
@@ -92,5 +91,5 @@ const datas = JSON.parse(localStorage.getItem('items'))
 
 ## Author
 
-- Website - [Tiffany Fust](https://tiffanyfust.ca/)
+- Portfolio - [Tiffany Fust](https://tiffanyfust.ca/)
 
