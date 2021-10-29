@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G)
-- Live Site URL: [](https://shortly-url-shortening-api.netlify.app/)
+- Solution URL: [Link to Frontend Mentor Solution](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G)
+- Live Site URL: [Link to my live Shortly Site](https://shortly-url-shortening-api.netlify.app/)
 
 ## My process
 
